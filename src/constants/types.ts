@@ -81,6 +81,7 @@ export type SyncPilotMessage = {
     rssi: number;
     mac: string;
     mqttCd?: number;
+    bootV?: number;
     src: string;
     ratio?: number;
   };
