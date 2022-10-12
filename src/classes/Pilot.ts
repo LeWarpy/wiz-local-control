@@ -220,7 +220,7 @@ export class SetPilotParametersSpeed {
  */
 export class SetPilotParametersColorTemperatureAndBrightness {
   @IsInt()
-  @Min(2000)
+  @Min(1000)
   @Max(9000)
   temp?: number;
   @IsInt()
@@ -239,7 +239,7 @@ export class SetPilotParametersColorTemperatureAndBrightness {
  */
 export class SetPilotParametersColorTemperature {
   @IsInt()
-  @Min(2000)
+  @Min(1000)
   @Max(9000)
   temp?: number;
 
@@ -380,7 +380,7 @@ export class SetPilotMessage {
 
   /**
    * Constructs color temperature control message.
-   * @param colorTemperature - Integer, valid range 2000-9000
+   * @param colorTemperature - Integer, valid range 1000-9000
    */
   static buildColorTemperatureControlMessage(colorTemperature: number) {
     const msg = new SetPilotMessage();
@@ -390,7 +390,7 @@ export class SetPilotMessage {
 
   /**
    * Constructs color temperature control message.
-   * @param colorTemperature - Integer, valid range 2000-9000
+   * @param colorTemperature - Integer, valid range 1000-9000
    * @param dimming - Integer, valid range is 10-100
    */
   static buildColorTemperatureAndBrightnessControlMessage(

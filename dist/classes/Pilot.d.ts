@@ -172,12 +172,12 @@ export declare class SetPilotMessage {
     static buildColorAndBrightnessControlMessage(red: number, green: number, blue: number, coolWhiteLevel: number, warmWhiteLevel: number, dimming: number): SetPilotMessage;
     /**
      * Constructs color temperature control message.
-     * @param colorTemperature - Integer, valid range 2000-9000
+     * @param colorTemperature - Integer, valid range 1000-9000
      */
     static buildColorTemperatureControlMessage(colorTemperature: number): SetPilotMessage;
     /**
      * Constructs color temperature control message.
-     * @param colorTemperature - Integer, valid range 2000-9000
+     * @param colorTemperature - Integer, valid range 1000-9000
      * @param dimming - Integer, valid range is 10-100
      */
     static buildColorTemperatureAndBrightnessControlMessage(colorTemperature: number, dimming: number): SetPilotMessage;

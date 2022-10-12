@@ -26,6 +26,6 @@ export declare type Temperature = {
  * 2. Color - determined by Red, Green, Blue, Cool White, Warm White
  * (0-255). There is a limit on a maximum amount of channels used in the same time:
  * 3 RGB or 2 RGB + 1 White or 2 Whites
- * 3. Color temperature – form color temperature using Cool and Warm white LEDs (2000-9000)
+ * 3. Color temperature – form color temperature using Cool and Warm white LEDs (1000-9000)
  */
 export declare type LightMode = Scene | Color | Temperature;
