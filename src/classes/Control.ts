@@ -105,6 +105,8 @@ export type FirstBeatMessage = {
   params: {
     mac: string;
     fwVersion: string;
+    matterVersion?: string;
+    productId?: number;
   };
 };
 
