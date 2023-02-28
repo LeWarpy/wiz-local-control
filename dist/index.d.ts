@@ -7,7 +7,7 @@ import { FavoriteLightMode } from "./classes/Favorites";
 import { WiZClickMode } from "./classes/WiZClick";
 import { SetUserConfigMessageParameters } from "./classes/SetUserConfig";
 import { SetModelConfigMessageParameters } from "./classes/SetModelConfig";
-export declare type WiZLocalControlConfig = {
+export type WiZLocalControlConfig = {
     incomingMsgCallback: (msg: WiZMessage, sourceIp: string) => void;
     interfaceName?: string;
 };

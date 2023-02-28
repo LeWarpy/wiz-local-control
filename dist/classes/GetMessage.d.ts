@@ -1,7 +1,7 @@
 /**
  * Message sent to the lamp requesting its status
  */
-export declare type GetPilotMessage = {
+export type GetPilotMessage = {
     method: "getPilot";
     version: number;
     id: number;
@@ -9,7 +9,7 @@ export declare type GetPilotMessage = {
 /**
  * WiZ Light power load
  */
-export declare type GetPowerResponse = {
+export type GetPowerResponse = {
     method: "getPower";
     result: {
         power: number;

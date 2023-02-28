@@ -49,7 +49,7 @@ export declare class SetSystemConfigMessage {
 /**
  * WiZ Light system configuration (fwVersion for example)
  */
-export declare type GetSystemConfigResponse = {
+export type GetSystemConfigResponse = {
     method: "getSystemConfig";
     result: {
         homeId: number;

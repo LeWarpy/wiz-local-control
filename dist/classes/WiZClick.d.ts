@@ -1,5 +1,5 @@
 import { FavoriteLightMode } from "./Favorites";
-export declare type WiZClickMode = FavoriteLightMode;
+export type WiZClickMode = FavoriteLightMode;
 export declare class SetWiZClickParameters {
     wizc1: {
         mode: number[];

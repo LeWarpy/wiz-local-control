@@ -114,6 +114,8 @@ class WiZLocalControl {
     async setModelConfig(parameters, lightIp) {
         const msg = SetModelConfig_1.SetModelConfigMessage.buildSetModelConfigMessage(parameters);
         await this.validateMsg(msg);
+        const msg_cctTable = SetModelConfig_1.SetCCTTableMessage.buildCCTTableMessage();
+        this.udpManager.sendUDPCommand(msg_cctTable, lightIp);
         return this.udpManager.sendUDPCommand(msg, lightIp);
     }
     /**

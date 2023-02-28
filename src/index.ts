@@ -14,7 +14,7 @@ import { GetPowerMessage, GetPowerResponse } from "./classes/GetMessage";
 import { FavoriteLightMode, SetFavoritesMessage, SetFavoritesParameters } from "./classes/Favorites";
 import { SetWiZClickMessage, SetWiZClickParameters, WiZClickMode } from "./classes/WiZClick";
 import { SetUserConfigMessage, SetUserConfigMessageParameters } from "./classes/SetUserConfig";
-import { SetModelConfigMessage, SetModelConfigMessageParameters } from "./classes/SetModelConfig";
+import { SetCCTTableMessage, SetModelConfigMessage, SetModelConfigMessageParameters } from "./classes/SetModelConfig";
 
 export type WiZLocalControlConfig = {
   incomingMsgCallback: (msg: WiZMessage, sourceIp: string) => void;
@@ -154,6 +154,8 @@ export default class WiZLocalControl {
   ): Promise<Result<any>> {
     const msg = SetModelConfigMessage.buildSetModelConfigMessage(parameters);
     await this.validateMsg(msg);
+    const msg_cctTable = SetCCTTableMessage.buildCCTTableMessage();
+    this.udpManager.sendUDPCommand(msg_cctTable,lightIp);
     return this.udpManager.sendUDPCommand(msg, lightIp);
   }
 

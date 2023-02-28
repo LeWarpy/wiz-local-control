@@ -2,12 +2,12 @@
  * Scene type – built in the bulb scenes. Could be one of the scenes listed
  * in staticScenes const
  */
-export declare type Scene = {
+export type Scene = {
     type: "scene";
     sceneId: number;
     name: string;
 };
-export declare type Color = {
+export type Color = {
     type: "color";
     r: number;
     g: number;
@@ -15,7 +15,7 @@ export declare type Color = {
     cw: number;
     ww: number;
 };
-export declare type Temperature = {
+export type Temperature = {
     type: "temperature";
     colorTemperature: number;
 };
@@ -28,4 +28,4 @@ export declare type Temperature = {
  * 3 RGB or 2 RGB + 1 White or 2 Whites
  * 3. Color temperature – form color temperature using Cool and Warm white LEDs (2000-9000)
  */
-export declare type LightMode = Scene | Color | Temperature;
+export type LightMode = Scene | Color | Temperature;

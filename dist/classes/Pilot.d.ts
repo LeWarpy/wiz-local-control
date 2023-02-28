@@ -3,7 +3,7 @@ import { Scene } from "./LightMode";
  * Acknowledgement message device should send to
  * the lamp on receiving SyncPilot message
  */
-export declare type SyncPilotAckMessage = {
+export type SyncPilotAckMessage = {
     method: "syncPilot";
     id: number;
     env: string;
@@ -14,7 +14,7 @@ export declare type SyncPilotAckMessage = {
 /**
  * Incoming message that lamp sends to report its status
  */
-export declare type SyncPilotMessage = {
+export type SyncPilotMessage = {
     method: "syncPilot";
     id: number;
     env: string;
@@ -119,7 +119,7 @@ export declare class SetPilotParametersColorTemperature {
     temp?: number;
     constructor(temperature: number);
 }
-export declare type SetPilotParams = SetPilotParametersColor | SetPilotParametersColorAndBrightness | SetPilotParametersColorTemperature | SetPilotParametersColorTemperatureAndBrightness | SetPilotParametersDimming | SetPilotParametersScene | SetPilotParametersSceneAndBrightness | SetPilotParametersSpeed | SetPilotParametersStatus | SetPilotParametersRatio;
+export type SetPilotParams = SetPilotParametersColor | SetPilotParametersColorAndBrightness | SetPilotParametersColorTemperature | SetPilotParametersColorTemperatureAndBrightness | SetPilotParametersDimming | SetPilotParametersScene | SetPilotParametersSceneAndBrightness | SetPilotParametersSpeed | SetPilotParametersStatus | SetPilotParametersRatio;
 export declare class SetPilotMessage {
     method: "setPilot";
     version: number;

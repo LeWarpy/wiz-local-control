@@ -12,7 +12,7 @@ import { SetUserConfigMessage } from "./SetUserConfig";
 import { SetWiZClickMessage } from "./WiZClick";
 import { SetFavoritesMessage } from "./Favorites";
 import { GetPilotMessage, GetPowerMessage, GetPowerResponse } from "./GetMessage";
-import { SetModelConfigMessage } from "./SetModelConfig";
+import { SetCCTTableMessage, SetModelConfigMessage } from "./SetModelConfig";
 import { LightMode } from "./LightMode";
 
 /**
@@ -47,7 +47,8 @@ export type WiZControlMessage =
   | SetFavoritesMessage
   | SetWiZClickMessage
   | GetPowerMessage
-  | SetModelConfigMessage;
+  | SetModelConfigMessage
+  | SetCCTTableMessage;
 
 export type WiZMessage =
   | GetPilotMessage

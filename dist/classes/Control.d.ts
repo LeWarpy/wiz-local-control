@@ -1,7 +1,7 @@
 /**
  * Incoming message that lamp is updating firmware and the status changed
  */
-export declare type UpdateOtaMessage = {
+export type UpdateOtaMessage = {
     method: "updateOta";
     id: number;
     env: string;
@@ -54,13 +54,15 @@ export declare class RebootMessage {
  * Message broadcasted by the light after booting,
  * way to inform nearby devices about its presence
  */
-export declare type FirstBeatMessage = {
+export type FirstBeatMessage = {
     method: "firstBeat";
     id: number;
     env: string;
     params: {
         mac: string;
         fwVersion: string;
+        matterVersion?: string;
+        productId?: number;
     };
 };
 /**
