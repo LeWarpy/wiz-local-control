@@ -29,8 +29,11 @@ export declare class SetModelConfigParameters {
 }
 export declare class SetCCTTableMessage {
     method: "setCctTable";
-    params: "{\"method\":\"setCctTable\",\"params\":{\"cctPoints\":[\"12ff00007800\",\"15ff0000ff00\",\"1b000000ff00\",\"28000000ffff\",\"2a00000096ff\",\"4100000000ff\"],\"maxCctPower\":2100,\"confTs\":0}}";
-    constructor();
+    params: {
+        cctPoints: ["12ff00007800", "15ff0000ff00", "1b000000ff00", "28000000ffff", "2a00000096ff", "4100000000ff"];
+        maxCctPower: 2500;
+        confTs: 0;
+    };
     static buildCCTTableMessage(): SetCCTTableMessage;
 }
 export declare class SetModelConfigMessage {
