@@ -58,7 +58,7 @@ __decorate([
 exports.SetModelConfigParameters = SetModelConfigParameters;
 class SetCctTableParameters {
     constructor() {
-        this.maxCctPower = 2500;
+        this.maxCctPower = 2100;
         this.confTs = 0;
         this.cctPoints = ["12ff00007800", "15ff0000ff00", "1b000000ff00", "28000000ffff", "2a00000096ff", "4100000000ff"];
     }
@@ -74,6 +74,9 @@ __decorate([
 ], SetCctTableParameters.prototype, "cctPoints", void 0);
 exports.SetCctTableParameters = SetCctTableParameters;
 class SetCCTTableMessage {
+    constructor() {
+        this.method = "setCctTable";
+    }
     static buildCCTTableMessage() {
         const msg = new SetCCTTableMessage();
         msg.params = new SetCctTableParameters();

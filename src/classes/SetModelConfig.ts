@@ -62,15 +62,19 @@ export class SetCctTableParameters {
   cctPoints: string[];
 
   constructor() {
-    this.maxCctPower = 2500;
+    this.maxCctPower = 2100;
     this.confTs = 0;
     this.cctPoints = ["12ff00007800","15ff0000ff00","1b000000ff00","28000000ffff","2a00000096ff","4100000000ff"];
   }
 }
 
 export class SetCCTTableMessage{
-  method: "setCctTable";
+  method: string;
   params:SetCctTableParameters;
+
+  constructor() {
+    this.method = "setCctTable";
+  }
 
   static buildCCTTableMessage():SetCCTTableMessage{
     const msg = new SetCCTTableMessage();

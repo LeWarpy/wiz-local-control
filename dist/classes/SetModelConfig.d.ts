@@ -34,8 +34,9 @@ export declare class SetCctTableParameters {
     constructor();
 }
 export declare class SetCCTTableMessage {
-    method: "setCctTable";
+    method: string;
     params: SetCctTableParameters;
+    constructor();
     static buildCCTTableMessage(): SetCCTTableMessage;
 }
 export declare class SetModelConfigMessage {
