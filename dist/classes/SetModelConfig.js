@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SetModelConfigMessage = exports.SetCCTTableMessage = exports.SetModelConfigParameters = void 0;
+exports.SetModelConfigMessage = exports.SetCCTTableMessage = exports.SetCctTableParameters = exports.SetModelConfigParameters = void 0;
 const class_validator_1 = require("class-validator");
 const networkConstants = require("../constants");
 class SetModelConfigParameters {
@@ -56,10 +56,35 @@ __decorate([
     (0, class_validator_1.IsInt)()
 ], SetModelConfigParameters.prototype, "fanSpeed", void 0);
 exports.SetModelConfigParameters = SetModelConfigParameters;
+class SetCctTableParameters {
+    constructor() {
+        this.maxCctPower = 2500;
+        this.confTs = 0;
+        this.cctPoints = ["12ff00007800", "15ff0000ff00", "1b000000ff00", "28000000ffff", "2a00000096ff", "4100000000ff"];
+    }
+}
+__decorate([
+    (0, class_validator_1.IsInt)()
+], SetCctTableParameters.prototype, "confTs", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)()
+], SetCctTableParameters.prototype, "maxCctPower", void 0);
+__decorate([
+    (0, class_validator_1.IsArray)()
+], SetCctTableParameters.prototype, "cctPoints", void 0);
+exports.SetCctTableParameters = SetCctTableParameters;
 class SetCCTTableMessage {
     static buildCCTTableMessage() {
         const msg = new SetCCTTableMessage();
+        msg.params = new SetCctTableParameters();
         return msg;
+        // msg.method = "setCctTable";
+        // msg.params = {
+        //   cctPoints: ["12ff00007800","15ff0000ff00","1b000000ff00","28000000ffff","2a00000096ff","4100000000ff"],
+        //   maxCctPower:2500,
+        //  confTs:0
+        //}
+        //return msg;
     }
 }
 exports.SetCCTTableMessage = SetCCTTableMessage;

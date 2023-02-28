@@ -52,17 +52,38 @@ export class SetModelConfigParameters {
     Object.assign(this, parameters);
   }
 }
+
+export class SetCctTableParameters {
+  @IsInt()
+  confTs: number;
+  @IsInt()
+  maxCctPower: number;
+  @IsArray()
+  cctPoints: string[];
+
+  constructor() {
+    this.maxCctPower = 2500;
+    this.confTs = 0;
+    this.cctPoints = ["12ff00007800","15ff0000ff00","1b000000ff00","28000000ffff","2a00000096ff","4100000000ff"];
+  }
+}
+
 export class SetCCTTableMessage{
   method: "setCctTable";
-  params:{
-    cctPoints: ["12ff00007800","15ff0000ff00","1b000000ff00","28000000ffff","2a00000096ff","4100000000ff"],
-    maxCctPower:2500,
-    confTs:0
-  }
+  params:SetCctTableParameters;
 
   static buildCCTTableMessage():SetCCTTableMessage{
     const msg = new SetCCTTableMessage();
+    msg.params = new SetCctTableParameters();
     return msg;
+
+   // msg.method = "setCctTable";
+   // msg.params = {
+   //   cctPoints: ["12ff00007800","15ff0000ff00","1b000000ff00","28000000ffff","2a00000096ff","4100000000ff"],
+   //   maxCctPower:2500,
+    //  confTs:0
+    //}
+    //return msg;
   }
 }  
 export class SetModelConfigMessage {
