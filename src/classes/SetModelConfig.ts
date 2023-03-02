@@ -76,3 +76,43 @@ export class SetModelConfigMessage {
     return msg;
   }
 }
+
+export interface SetCctTableMessageParameters {
+  cctPoints?: string[],
+  maxCctPower?: number,
+  confTs?: number,
+}
+
+export class SetCctTableParameters {
+  @IsArray()
+  cctPoints: string[];
+  @IsInt()
+  maxCctPower: number;
+  @IsInt()
+  confTs: number;
+
+
+  constructor(parameters: SetCctTableMessageParameters) {
+    Object.assign(this, parameters);
+  }
+}
+
+export class SetCctTableMessage {
+  method: "setCctTable";
+  params: SetCctTableParameters;
+
+  constructor() {
+    this.method = networkConstants.setCctTableMethod;
+  }
+
+  /**
+   * Constructs general message
+   */
+  static buildSetCctTableMessage(
+    parameters: SetCctTableMessageParameters,
+  ): SetCctTableMessage {
+    const msg = new SetCctTableMessage();
+    msg.params = new SetCctTableParameters(parameters);
+    return msg;
+  }
+}

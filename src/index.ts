@@ -14,7 +14,7 @@ import { GetPowerMessage, GetPowerResponse } from "./classes/GetMessage";
 import { FavoriteLightMode, SetFavoritesMessage, SetFavoritesParameters } from "./classes/Favorites";
 import { SetWiZClickMessage, SetWiZClickParameters, WiZClickMode } from "./classes/WiZClick";
 import { SetUserConfigMessage, SetUserConfigMessageParameters } from "./classes/SetUserConfig";
-import { SetModelConfigMessage, SetModelConfigMessageParameters } from "./classes/SetModelConfig";
+import { SetModelConfigMessage, SetModelConfigMessageParameters, SetCctTableMessage, SetCctTableMessageParameters } from "./classes/SetModelConfig";
 
 export type WiZLocalControlConfig = {
   incomingMsgCallback: (msg: WiZMessage, sourceIp: string) => void;
@@ -153,6 +153,20 @@ export default class WiZLocalControl {
     lightIp: string,
   ): Promise<Result<any>> {
     const msg = SetModelConfigMessage.buildSetModelConfigMessage(parameters);
+    await this.validateMsg(msg);
+    return this.udpManager.sendUDPCommand(msg, lightIp);
+  }
+
+   /**
+   * Sets CCT Table for WiZ Light
+   * @param parameters SetCctTable message parameters
+   * @param lightIp Light IP address
+   */
+   async setCctTable(
+    parameters: SetCctTableMessageParameters,
+    lightIp: string,
+  ): Promise<Result<any>> {
+    const msg = SetCctTableMessage.buildSetCctTableMessage(parameters);
     await this.validateMsg(msg);
     return this.udpManager.sendUDPCommand(msg, lightIp);
   }

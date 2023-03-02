@@ -1,6 +1,14 @@
 {
   "name": "wiz-local-control",
+<<<<<<< Updated upstream
   "version": "2.0.0",
+=======
+<<<<<<< Updated upstream
+  "version": "2.0.1",
+=======
+  "version": "2.0.2",
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   "description": "Library for controlling WiZ devices via UDP",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
