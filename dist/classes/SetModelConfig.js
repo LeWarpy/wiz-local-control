@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SetModelConfigMessage = exports.SetModelConfigParameters = void 0;
+exports.SetCctTableMessage = exports.SetCctTableParameters = exports.SetModelConfigMessage = exports.SetModelConfigParameters = void 0;
 const class_validator_1 = require("class-validator");
 const networkConstants = require("../constants");
 class SetModelConfigParameters {
@@ -75,4 +75,33 @@ __decorate([
     (0, class_validator_1.ValidateNested)()
 ], SetModelConfigMessage.prototype, "params", void 0);
 exports.SetModelConfigMessage = SetModelConfigMessage;
+class SetCctTableParameters {
+    constructor(parameters) {
+        Object.assign(this, parameters);
+    }
+}
+__decorate([
+    (0, class_validator_1.IsArray)()
+], SetCctTableParameters.prototype, "cctPoints", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)()
+], SetCctTableParameters.prototype, "maxCctPower", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)()
+], SetCctTableParameters.prototype, "confTs", void 0);
+exports.SetCctTableParameters = SetCctTableParameters;
+class SetCctTableMessage {
+    constructor() {
+        this.method = networkConstants.setCctTableMethod;
+    }
+    /**
+     * Constructs general message
+     */
+    static buildSetCctTableMessage(parameters) {
+        const msg = new SetCctTableMessage();
+        msg.params = new SetCctTableParameters(parameters);
+        return msg;
+    }
+}
+exports.SetCctTableMessage = SetCctTableMessage;
 //# sourceMappingURL=SetModelConfig.js.map

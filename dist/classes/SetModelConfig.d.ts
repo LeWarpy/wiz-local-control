@@ -38,3 +38,23 @@ export declare class SetModelConfigMessage {
      */
     static buildSetModelConfigMessage(parameters: SetModelConfigMessageParameters): SetModelConfigMessage;
 }
+export interface SetCctTableMessageParameters {
+    cctPoints?: string[];
+    maxCctPower?: number;
+    confTs?: number;
+}
+export declare class SetCctTableParameters {
+    cctPoints: string[];
+    maxCctPower: number;
+    confTs: number;
+    constructor(parameters: SetCctTableMessageParameters);
+}
+export declare class SetCctTableMessage {
+    method: "setCctTable";
+    params: SetCctTableParameters;
+    constructor();
+    /**
+     * Constructs general message
+     */
+    static buildSetCctTableMessage(parameters: SetCctTableMessageParameters): SetCctTableMessage;
+}

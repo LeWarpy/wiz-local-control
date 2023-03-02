@@ -6,7 +6,7 @@ import { GetPowerResponse } from "./classes/GetMessage";
 import { FavoriteLightMode } from "./classes/Favorites";
 import { WiZClickMode } from "./classes/WiZClick";
 import { SetUserConfigMessageParameters } from "./classes/SetUserConfig";
-import { SetModelConfigMessageParameters } from "./classes/SetModelConfig";
+import { SetModelConfigMessageParameters, SetCctTableMessageParameters } from "./classes/SetModelConfig";
 export declare type WiZLocalControlConfig = {
     incomingMsgCallback: (msg: WiZMessage, sourceIp: string) => void;
     interfaceName?: string;
@@ -69,6 +69,12 @@ export default class WiZLocalControl {
      * @param lightIp Light IP address
      */
     setModelConfig(parameters: SetModelConfigMessageParameters, lightIp: string): Promise<Result<any>>;
+    /**
+    * Sets CCT Table for WiZ Light
+    * @param parameters SetCctTable message parameters
+    * @param lightIp Light IP address
+    */
+    setCctTable(parameters: SetCctTableMessageParameters, lightIp: string): Promise<Result<any>>;
     /**
      * Changes temperature ranges for WiZ Light
      * @param whiteTemperatureMin the temperature in Kelvin for the native warm white

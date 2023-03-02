@@ -117,6 +117,16 @@ class WiZLocalControl {
         return this.udpManager.sendUDPCommand(msg, lightIp);
     }
     /**
+    * Sets CCT Table for WiZ Light
+    * @param parameters SetCctTable message parameters
+    * @param lightIp Light IP address
+    */
+    async setCctTable(parameters, lightIp) {
+        const msg = SetModelConfig_1.SetCctTableMessage.buildSetCctTableMessage(parameters);
+        await this.validateMsg(msg);
+        return this.udpManager.sendUDPCommand(msg, lightIp);
+    }
+    /**
      * Changes temperature ranges for WiZ Light
      * @param whiteTemperatureMin the temperature in Kelvin for the native warm white
      * @param whiteTemperatureMax the temperature in Kelvin for the native cool white
