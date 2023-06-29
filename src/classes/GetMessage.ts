@@ -33,3 +33,14 @@ export class GetPowerMessage {
     this.version = 1;
   }
 }
+
+export class GetCamSelfTestMessage {
+  method: "camSelfTest";
+  params: any;
+
+  constructor() {
+    this.params = {
+      cmd: "start"
+    }
+  }
+}

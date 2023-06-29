@@ -24,3 +24,8 @@ export declare class GetPowerMessage {
     id: number;
     constructor();
 }
+export declare class GetCamSelfTestMessage {
+    method: "camSelfTest";
+    params: any;
+    constructor();
+}

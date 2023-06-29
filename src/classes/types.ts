@@ -11,7 +11,7 @@ import { GetSystemConfigMessage, GetSystemConfigResponse, SetSystemConfigMessage
 import { SetUserConfigMessage } from "./SetUserConfig";
 import { SetWiZClickMessage } from "./WiZClick";
 import { SetFavoritesMessage } from "./Favorites";
-import { GetPilotMessage, GetPowerMessage, GetPowerResponse } from "./GetMessage";
+import { GetCamSelfTestMessage, GetPilotMessage, GetPowerMessage, GetPowerResponse } from "./GetMessage";
 import { SetCctTableMessage, SetModelConfigMessage } from "./SetModelConfig";
 import { LightMode } from "./LightMode";
 
@@ -48,6 +48,7 @@ export type WiZControlMessage =
   | SetWiZClickMessage
   | GetPowerMessage
   | SetModelConfigMessage
+  | GetCamSelfTestMessage
   | SetCctTableMessage;
 
 export type WiZMessage =

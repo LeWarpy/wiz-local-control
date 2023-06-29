@@ -10,7 +10,7 @@ import {
 } from "./classes/SystemConfig";
 import { SetPilotMessage } from "./classes/Pilot";
 import { LightMode } from "./classes/LightMode";
-import { GetPowerMessage, GetPowerResponse } from "./classes/GetMessage";
+import { GetCamSelfTestMessage, GetPowerMessage, GetPowerResponse } from "./classes/GetMessage";
 import { FavoriteLightMode, SetFavoritesMessage, SetFavoritesParameters } from "./classes/Favorites";
 import { SetWiZClickMessage, SetWiZClickParameters, WiZClickMode } from "./classes/WiZClick";
 import { SetUserConfigMessage, SetUserConfigMessageParameters } from "./classes/SetUserConfig";
@@ -357,6 +357,17 @@ export default class WiZLocalControl {
     const msg = new GetPowerMessage();
     return this.udpManager.sendUDPCommand<GetPowerResponse>(msg, lightIp);
   }
+
+  /**
+   * Raven Camera Self Test
+   * @param lightIp Light IP address
+   */
+    async camSelfTest(
+      lightIp: string,
+    ): Promise<Result<any>> {
+      const msg = new GetCamSelfTestMessage();
+      return this.udpManager.sendUDPCommand(msg, lightIp);
+    }
 
   /**
    * Sets favorites on the light

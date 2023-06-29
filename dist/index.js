@@ -255,6 +255,14 @@ class WiZLocalControl {
         return this.udpManager.sendUDPCommand(msg, lightIp);
     }
     /**
+     * Raven Camera Self Test
+     * @param lightIp Light IP address
+     */
+    async camSelfTest(lightIp) {
+        const msg = new GetMessage_1.GetCamSelfTestMessage();
+        return this.udpManager.sendUDPCommand(msg, lightIp);
+    }
+    /**
      * Sets favorites on the light
      * @param favorite1
      * @param favorite2

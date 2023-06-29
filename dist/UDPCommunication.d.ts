@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { Socket } from "dgram";
 import { Result, WiZControlMessage, WiZMessageResponse } from "./classes/types";
 /**

@@ -15,3 +15,4 @@ export declare const setWiZClickMethod = "setWiZClick";
 export declare const getPower = "getPower";
 export declare const setModelConfigMethod = "setModelConfig";
 export declare const setCctTableMethod = "setCctTable";
+export declare const camSelfTestMethod = "camSelfTest";

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setCctTableMethod = exports.setModelConfigMethod = exports.getPower = exports.setWiZClickMethod = exports.setFavoritesMethod = exports.setUserConfigMethod = exports.setSystemConfigMethod = exports.rebootMethod = exports.resetMethod = exports.updateOtaMethod = exports.setPilotMethod = exports.getSystemConfigMethod = exports.registrationMethod = exports.firstBeatMethod = exports.syncPilotMethod = exports.LIGHT_UDP_CONTROL_PORT = exports.DEVICE_UDP_LISTEN_PORT = void 0;
+exports.camSelfTestMethod = exports.setCctTableMethod = exports.setModelConfigMethod = exports.getPower = exports.setWiZClickMethod = exports.setFavoritesMethod = exports.setUserConfigMethod = exports.setSystemConfigMethod = exports.rebootMethod = exports.resetMethod = exports.updateOtaMethod = exports.setPilotMethod = exports.getSystemConfigMethod = exports.registrationMethod = exports.firstBeatMethod = exports.syncPilotMethod = exports.LIGHT_UDP_CONTROL_PORT = exports.DEVICE_UDP_LISTEN_PORT = void 0;
 exports.DEVICE_UDP_LISTEN_PORT = 38900;
 exports.LIGHT_UDP_CONTROL_PORT = 38899;
 exports.syncPilotMethod = "syncPilot";
@@ -18,4 +18,5 @@ exports.setWiZClickMethod = "setWiZClick";
 exports.getPower = "getPower";
 exports.setModelConfigMethod = "setModelConfig";
 exports.setCctTableMethod = "setCctTable";
+exports.camSelfTestMethod = "camSelfTest";
 //# sourceMappingURL=constants.js.map

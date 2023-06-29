@@ -138,6 +138,11 @@ export default class WiZLocalControl {
      */
     getPower(lightIp: string): Promise<Result<GetPowerResponse>>;
     /**
+     * Raven Camera Self Test
+     * @param lightIp Light IP address
+     */
+    camSelfTest(lightIp: string): Promise<Result<any>>;
+    /**
      * Sets favorites on the light
      * @param favorite1
      * @param favorite2

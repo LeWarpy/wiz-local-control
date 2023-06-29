@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetPowerMessage = void 0;
+exports.GetCamSelfTestMessage = exports.GetPowerMessage = void 0;
 const networkConstants = require("../constants");
 /**
  * Message sent to the lamp requesting its power load
@@ -13,4 +13,12 @@ class GetPowerMessage {
     }
 }
 exports.GetPowerMessage = GetPowerMessage;
+class GetCamSelfTestMessage {
+    constructor() {
+        this.params = {
+            cmd: "start"
+        };
+    }
+}
+exports.GetCamSelfTestMessage = GetCamSelfTestMessage;
 //# sourceMappingURL=GetMessage.js.map
