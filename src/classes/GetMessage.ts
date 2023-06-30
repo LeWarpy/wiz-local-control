@@ -39,6 +39,7 @@ export class GetCamSelfTestMessage {
   params: any;
 
   constructor() {
+    this.method = "camSelfTest"
     this.params = {
       cmd: "start"
     }

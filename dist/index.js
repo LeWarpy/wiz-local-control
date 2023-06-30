@@ -260,6 +260,7 @@ class WiZLocalControl {
      */
     async camSelfTest(lightIp) {
         const msg = new GetMessage_1.GetCamSelfTestMessage();
+        await this.validateMsg(msg, true);
         return this.udpManager.sendUDPCommand(msg, lightIp);
     }
     /**

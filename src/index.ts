@@ -362,12 +362,13 @@ export default class WiZLocalControl {
    * Raven Camera Self Test
    * @param lightIp Light IP address
    */
-    async camSelfTest(
-      lightIp: string,
-    ): Promise<Result<any>> {
-      const msg = new GetCamSelfTestMessage();
-      return this.udpManager.sendUDPCommand(msg, lightIp);
-    }
+  async camSelfTest(
+    lightIp: string,
+  ): Promise<Result<any>> {
+    const msg = new GetCamSelfTestMessage();
+    await this.validateMsg(msg, true);
+    return this.udpManager.sendUDPCommand(msg, lightIp);
+  }
 
   /**
    * Sets favorites on the light

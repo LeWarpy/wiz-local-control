@@ -15,6 +15,7 @@ class GetPowerMessage {
 exports.GetPowerMessage = GetPowerMessage;
 class GetCamSelfTestMessage {
     constructor() {
+        this.method = "camSelfTest";
         this.params = {
             cmd: "start"
         };
